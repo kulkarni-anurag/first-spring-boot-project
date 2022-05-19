@@ -27,6 +27,7 @@ public class LoginController {
             model.addAttribute("password", password);
             return "welcome";
         } else {
+            model.addAttribute("error_message", "Invalid Credentials!");
             return "login";
         }
     }
