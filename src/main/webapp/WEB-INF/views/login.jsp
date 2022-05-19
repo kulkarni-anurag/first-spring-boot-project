@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +14,8 @@
 <body>
     <div class="container">
         <h2 class="text-center mt-5">My First JSP Page from Spring Boot</h2>
+        <br />
+        <h4>Welcome ${name}</h4>
     </div>
 </body>
 </html>
