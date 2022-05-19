@@ -15,19 +15,7 @@
     <div class="container">
         <h2 class="text-center mt-5">Login Page</h2>
         <br />
-        <form method="post" class="form" role="form">
-            <div class="form-group">
-                <label for="username">Enter Username:</label>
-                <input type="text" class="form-control" name="username" placeholder="Enter Username" />
-            </div>
-            <div class="form-group">
-                <label for="username">Enter Password:</label>
-                <input type="password" class="form-control" name="password" placeholder="Enter Password" />
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-success">Submit</button>
-            </div>
-        </form>
+        <h4 class="text-center">Welcome ${username}, your password is: ${password}</h4>
     </div>
 </body>
 </html>
