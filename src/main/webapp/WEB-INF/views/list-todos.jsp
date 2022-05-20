@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+    <%@ include file="common/navbar.jspf" %>
     <div class="container">
         <h2 class="text-center mt-5">Todos Page</h2>
         <br />
