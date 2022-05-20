@@ -21,19 +21,25 @@
         <h2 class="text-center mt-5">Login Page</h2>
         <br />
         <h5 class="error">${error_message}</h5>
-        <form method="post" class="form" role="form">
-            <div class="form-group">
-                <label for="username">Enter Username:</label>
-                <input type="text" class="form-control" name="username" placeholder="Enter Username" />
+        <div class="row justify-content-center">
+            <div class="card col-md-8">
+                <div class="card-body">
+                    <form method="post" class="form" role="form">
+                        <div class="form-group">
+                            <label for="username">Enter Username:</label>
+                            <input type="text" class="form-control" name="username" placeholder="Enter Username" />
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Enter Password:</label>
+                            <input type="password" class="form-control" name="password" placeholder="Enter Password" />
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="username">Enter Password:</label>
-                <input type="password" class="form-control" name="password" placeholder="Enter Password" />
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-success">Submit</button>
-            </div>
-        </form>
+        </div>
     </div>
 </body>
 </html>
