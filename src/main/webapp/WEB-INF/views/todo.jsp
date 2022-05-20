@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Todo Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -29,10 +30,13 @@
                             <form:textarea path="desc" class="form-control" required="true"></form:textarea>
                         </div>
                         <div class="form-group">
-                            <form:input type="text" path="targetDate" class="form-control" />
+                            <form:input type="text" path="targetDate" class="form-control" id="targetDate" />
                         </div>
                         <div class="form-group">
                             <form:errors path="desc" cssClass="text-warning" />
+                        </div>
+                        <div class="form-group">
+                            <form:errors path="targetDate" cssClass="text-warning" />
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success">Submit</button>
@@ -42,5 +46,11 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        $("#targetDate").datepicker({
+            format: 'dd/mm/yyyy'
+        });
+    </script>
 </body>
 </html>
