@@ -22,8 +22,17 @@
                 <div class="card-body">
                     <form:form method="post" modelAttribute="todo">
                         <div class="form-group">
+                            <form:hidden path="id" />
+                        </div>
+                        <div class="form-group">
                             <form:label path="desc">Enter Todo Description:</form:label>
-                            <form:textarea path="desc" class="form-control"></form:textarea>
+                            <form:textarea path="desc" class="form-control" required="true"></form:textarea>
+                        </div>
+                        <div class="form-group">
+                            <form:input type="text" path="targetDate" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <form:errors path="desc" cssClass="text-warning" />
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success">Submit</button>
