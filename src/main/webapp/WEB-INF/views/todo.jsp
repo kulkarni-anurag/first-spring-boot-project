@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,15 +20,15 @@
         <div class="row justify-content-center">
             <div class="card col-md-8">
                 <div class="card-body">
-                    <form method="post" role="form">
+                    <form:form method="post" modelAttribute="todo">
                         <div class="form-group">
-                            <label for="desc">Enter Todo Description:</label>
-                            <textarea name="desc" class="form-control"></textarea>
+                            <form:label path="desc">Enter Todo Description:</form:label>
+                            <form:textarea path="desc" class="form-control"></form:textarea>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success">Submit</button>
                         </div>
-                    </form>
+                    </form:form>
                 </div>
             </div>
         </div>
