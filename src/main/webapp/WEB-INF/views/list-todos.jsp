@@ -16,6 +16,8 @@
     <div class="container">
         <h2 class="text-center mt-5">Todos Page</h2>
         <br />
+        <h5>Yo! ${username}</h5>
+        <br />
         <table class="table table-bordered table-striped">
             <caption>Your Todos are:</caption>
             <thead class="thead">

@@ -8,8 +8,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
+@SessionAttributes("username")
 public class LoginController {
 
     @Autowired
@@ -24,7 +26,6 @@ public class LoginController {
     public String handleLogin(ModelMap model, @RequestParam String username, @RequestParam String password){
         if(service.validateUser(username, password)){
             model.addAttribute("username", username);
-            model.addAttribute("password", password);
             return "welcome";
         } else {
             model.addAttribute("error_message", "Invalid Credentials!");

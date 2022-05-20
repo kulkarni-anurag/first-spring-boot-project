@@ -15,7 +15,9 @@
     <div class="container">
         <h2 class="text-center mt-5">Login Page</h2>
         <br />
-        <h4 class="text-center">Welcome ${username}, your password is: ${password}</h4>
+        <h4 class="text-center">Welcome ${username}</h4>
+        <br />
+        <a href="/list-todos">Manage your todos</a>
     </div>
 </body>
 </html>
