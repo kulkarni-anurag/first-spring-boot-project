@@ -41,6 +41,7 @@
                 </c:forEach>
             </tbody>
         </table>
+        <a href="/addtodo" class="btn btn-primary">Add Todo</a>
         <br />
         <br />
     </div>
