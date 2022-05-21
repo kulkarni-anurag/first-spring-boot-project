@@ -33,9 +33,13 @@ public class TodoController {
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
     }
 
+    private String getLoggedInUser(ModelMap model) {
+        return (String) model.get("username");
+    }
+
     @GetMapping(value = "/list-todos")
     public String showTodos(ModelMap model){
-        String user = (String) model.get("username");
+        String user = getLoggedInUser(model);
         model.addAttribute("todos", service.retrieveTodos(user));
         return "list-todos";
     }
@@ -51,7 +55,7 @@ public class TodoController {
         if(result.hasErrors()){
             return "todo";
         }
-        String user = (String) model.get("username");
+        String user = getLoggedInUser(model);
         service.addTodo(user, todo.getDesc(), todo.getTargetDate(), false);
         model.clear();
         return "redirect:list-todos";
@@ -69,7 +73,7 @@ public class TodoController {
         if(result.hasErrors()){
             return "todo";
         }
-        String user = (String) model.get("username");
+        String user = getLoggedInUser(model);
         todo.setUser(user);
         service.updateTodo(todo);
         model.clear();
