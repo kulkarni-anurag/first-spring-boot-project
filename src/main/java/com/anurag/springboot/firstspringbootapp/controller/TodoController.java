@@ -87,6 +87,9 @@ public class TodoController {
 
     @GetMapping(value = "/deletetodo")
     public String deleteTodo(ModelMap model, @RequestParam int id){
+        if(id == 1){
+            throw new RuntimeException("Some exception occured!");
+        }
         service.deleteTodo(id);
         model.clear();
         return "redirect:list-todos";
