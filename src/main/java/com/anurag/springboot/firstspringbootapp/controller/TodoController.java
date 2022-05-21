@@ -8,6 +8,8 @@ import com.anurag.springboot.firstspringbootapp.todo.Todo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -16,12 +18,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 import jakarta.validation.Valid;
 
 @Controller
-@SessionAttributes("username")
 public class TodoController {
 
     @Autowired
@@ -34,12 +34,17 @@ public class TodoController {
     }
 
     private String getLoggedInUser(ModelMap model) {
-        return (String) model.get("username");
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(principal instanceof UserDetails){
+            return ((UserDetails) principal).getUsername();
+        }
+        return principal.toString();
     }
 
     @GetMapping(value = "/list-todos")
     public String showTodos(ModelMap model){
         String user = getLoggedInUser(model);
+        model.addAttribute("username", user);
         model.addAttribute("todos", service.retrieveTodos(user));
         return "list-todos";
     }
